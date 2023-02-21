@@ -134,16 +134,12 @@ if (empty($TMUX))
   endif
 endif
 
-function Gitbranch()
-    return trim(system("git branch 2> /dev/null | sed -e 's/..//'"))
-endfunction
 " }}}
 
 " STATUSLINE ------------------------------------------------------------------------ {{{
 hi StatusLine ctermbg=3 ctermfg=4
 set laststatus=2
 set statusline+=%#DiffAdd#
-set statusline=\ %t%y\~(%{Gitbranch()})
 set statusline+=%#LineNr#
 set statusline+=\ %f
 set statusline+=%m\
